@@ -4,14 +4,6 @@ A clean, production-grade Flutter application demonstrating core Flutter concept
 
 ---
 
-## Screenshots
-
-| Login Screen | Validation Errors | Home Screen |
-|---|---|---|
-| Email + password fields, decorative background | Inline error messages | Dashboard with greeting card & stats |
-
----
-
 ## Features
 
 - ✅ **Login Screen** — email & password `TextFormField`s with icons
@@ -45,12 +37,6 @@ flutter_login_app/
 
 ### Prerequisites
 
-| Tool | Version |
-|---|---|
-| Flutter SDK | ≥ 3.10.0 |
-| Dart SDK | ≥ 3.0.0 |
-| Android Studio / VS Code | Latest |
-
 ### 1. Install Flutter
 
 Follow the official guide: https://docs.flutter.dev/get-started/install
@@ -79,36 +65,6 @@ flutter run
 ```bash
 flutter test
 ```
-
----
-
-## Key Concepts Demonstrated
-
-### Form Validation (`lib/screens/login_screen.dart`)
-
-```dart
-String? _validateEmail(String? value) {
-  if (value == null || value.trim().isEmpty) return 'Email is required';
-  final emailRegex = RegExp(r'^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$');
-  if (!emailRegex.hasMatch(value.trim())) return 'Please enter a valid email address';
-  return null;
-}
-```
-
-### Navigation with Custom Transition
-
-```dart
-Navigator.push(
-  context,
-  PageRouteBuilder(
-    pageBuilder: (_, animation, __) => HomeScreen(email: email),
-    transitionsBuilder: (_, animation, __, child) =>
-        FadeTransition(opacity: animation, child: child),
-    transitionDuration: const Duration(milliseconds: 500),
-  ),
-);
-```
-
 ---
 
 ## Tech Stack
@@ -119,7 +75,3 @@ Navigator.push(
 - **Architecture**: Simple widget-based, screens in `lib/screens/`
 
 ---
-
-## License
-
-MIT © 2024
